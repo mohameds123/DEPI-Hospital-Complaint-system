@@ -10,10 +10,11 @@ class Onboarding1 extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: width * 0.05),
         child: Column(
-          spacing: height * 0.06,
+          spacing: 74,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("assets/image/Your voice builds better care 2.png"),
@@ -25,7 +26,7 @@ class Onboarding1 extends StatelessWidget {
                 );
               },
               child: ButtonWidget(
-                color: Color(0XFF0D6EFD),
+                color: Color(0xff0D6EFD),
                 height: height,
                 width: width,
                 text: "GET Started",

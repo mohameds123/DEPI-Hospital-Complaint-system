@@ -1,5 +1,3 @@
-import 'package:depi_hospital_complaint_system/Ui/screens/home_patient.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/new_complain.dart';
 import 'package:depi_hospital_complaint_system/Ui/screens/onboarding/onboarding1.dart';
 import 'package:flutter/material.dart';
 

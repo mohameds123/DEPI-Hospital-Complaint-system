@@ -45,9 +45,14 @@ class _NewComplainScreenState extends State<NewComplainScreen> {
             DropdownButtonFormField<String>(
               dropdownColor: Colors.white,
               decoration: InputDecoration(
+                filled: true,
+                fillColor: selectedRole == null
+                    ? Colors.white
+                    : Color(0xffE8E9EB),
                 labelText: 'UserType',
                 hintText: 'enter your Role',
                 border: OutlineInputBorder(
+                  borderSide: BorderSide(width: 1, color: Color(0xff79747E)),
                   borderRadius: BorderRadius.circular(6),
                 ),
                 isDense: true,
@@ -123,7 +128,7 @@ class _NewComplainScreenState extends State<NewComplainScreen> {
                 child: Container(
                   width: 42,
                   height: 42,
-                  decoration: BoxDecoration(color: Color(0xff4f5efa)),
+                  decoration: BoxDecoration(color: Color(0xff0D6EFD)),
                   child: Icon(Icons.arrow_forward, color: Colors.white),
                 ),
               ),

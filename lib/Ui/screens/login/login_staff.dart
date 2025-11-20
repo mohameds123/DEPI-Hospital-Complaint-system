@@ -1,5 +1,4 @@
 import 'package:depi_hospital_complaint_system/Ui/screens/home_patient.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/login/login_admin.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 
@@ -36,9 +35,9 @@ class _LoginStaffState extends State<LoginStaff> {
             ),
             Text(
               "Staff Access Portal",
-              style: TextStyle(fontSize: width * 0.06),
+              style: TextStyle(fontFamily: "Poppins", fontSize: width * 0.06),
             ),
-
+            SizedBox(height: 0),
             CustomTextField(
               controller: emailcontroller,
               hintText: "enter your email",
@@ -52,29 +51,41 @@ class _LoginStaffState extends State<LoginStaff> {
               passwordTextIcon: true,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Checkbox(
-                  activeColor: Color(0XFF0D6EFD),
-                  side: BorderSide(color: Colors.black, width: width * 0.006),
-                  value: isChecked,
-                  onChanged: (value) {
-                    setState(() {
-                      isChecked = value!;
-                    });
-                  },
+                SizedBox(
+                  height: 32,
+                  width: 32,
+                  child: Checkbox(
+                    activeColor: Color(0XFF0D6EFD),
+                    side: BorderSide(color: Colors.black, width: width * 0.006),
+                    value: isChecked,
+                    onChanged: (value) {
+                      setState(() {
+                        isChecked = value!;
+                      });
+                    },
+                  ),
                 ),
                 Text(
                   "Remember Me",
-                  style: TextStyle(color: Colors.grey, fontSize: width * 0.05),
+                  style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey,
+                    fontSize: 16,
+                  ),
                 ),
               ],
             ),
 
-            Padding(
-              padding: EdgeInsets.only(left: width * 0.4),
+            Align(
+              alignment: Alignment.centerRight,
               child: Text(
                 "Forget Password?",
                 style: TextStyle(
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w400,
                   decoration: TextDecoration.underline,
                   decorationColor: Colors.grey,
                   color: Colors.grey,

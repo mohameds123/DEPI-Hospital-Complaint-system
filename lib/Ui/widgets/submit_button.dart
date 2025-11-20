@@ -62,7 +62,7 @@ class SubmitButton extends StatelessWidget {
                           width: 254,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(32),
-                            color: Color(0xff4f5efa),
+                            color: Color(0xff0D6EFD),
                           ),
                           child: Text(
                             'Done',
@@ -87,7 +87,7 @@ class SubmitButton extends StatelessWidget {
           height: 38,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            color: Color(0xff4f5efa),
+            color: Color(0xff0D6EFD),
           ),
           child: Text(
             'Submit',

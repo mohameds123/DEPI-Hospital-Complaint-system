@@ -5,24 +5,31 @@ class ButtonWidget extends StatelessWidget {
   double width;
   String text;
   Color color;
-  ButtonWidget({super.key, required this.height, required this.width,required this.text,required this.color});
+  ButtonWidget({
+    super.key,
+    required this.height,
+    required this.width,
+    required this.text,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: height * 0.07,
+      height: height * 0.068,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(height * 0.02),
+        borderRadius: BorderRadius.circular(12),
       ),
       child: Center(
         child: Text(
           text,
           style: TextStyle(
+            fontFamily: "Poppins",
             color: Colors.white,
-            fontWeight: FontWeight.w500,
-            fontSize: width * 0.05,
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
           ),
         ),
       ),

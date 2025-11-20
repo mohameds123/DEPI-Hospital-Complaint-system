@@ -43,7 +43,7 @@ class _NewStaffComplainState extends State<NewStaffComplain> {
               'New Complain',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
             ),
-            SizedBox(height: 8),
+            SizedBox(height: 32),
             // job title
             CustomTextField(
               controller: jobtitleController,
@@ -195,7 +195,7 @@ class _NewStaffComplainState extends State<NewStaffComplain> {
                 child: Container(
                   width: 42,
                   height: 42,
-                  decoration: BoxDecoration(color: Color(0xff4f5efa)),
+                  decoration: BoxDecoration(color: Color(0xff0D6EFD)),
                   child: Icon(Icons.arrow_forward, color: Colors.white),
                 ),
               ),

@@ -12,12 +12,9 @@ class Onbaording2 extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.only(
-          right: width * 0.1,
-          left: width * 0.1,
-          top: height * 0.1,
-        ),
+        padding: EdgeInsets.only(right: 12, left: 12, top: height * 0.1),
         child: Column(
           spacing: height * 0.04,
           children: [
@@ -26,13 +23,19 @@ class Onbaording2 extends StatelessWidget {
               height: height * 0.205,
             ),
             Text(
-              "Welcome to TrustMed — Please choose your role",
-              style: TextStyle(fontSize: width * 0.07),
+              textAlign: TextAlign.center,
+              "Welcome to TrustMed\n— Please choose your role",
+              style: TextStyle(
+                fontFamily: "Poppins",
+                fontWeight: FontWeight.w400,
+
+                fontSize: 24,
+              ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: width * 0.06),
+              padding: EdgeInsets.symmetric(horizontal: width * 0.176),
               child: Column(
-                spacing: height * 0.03,
+                spacing: 29,
                 children: [
                   GestureDetector(
                     onTap: () {

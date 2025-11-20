@@ -29,7 +29,7 @@ class CustomRadioButton extends StatelessWidget {
                 ? Icons.radio_button_checked
                 : Icons.radio_button_off, // or Icons.radio_button_off
             color: selectedValue == '$value'
-                ? Color(0xff4f5efa)
+                ? Color(0xff0D6EFD)
                 : Color(0xff49454F),
           ),
         ],

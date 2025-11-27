@@ -61,7 +61,7 @@ class _NewComplainScreenState extends State<NewComplainScreen> {
                   vertical: 14,
                 ),
               ),
-              value: selectedRole,
+              initialValue: selectedRole,
               items: const [
                 DropdownMenuItem(value: 'Patient', child: Text('Patient')),
                 DropdownMenuItem(value: 'Staff', child: Text('Staff')),

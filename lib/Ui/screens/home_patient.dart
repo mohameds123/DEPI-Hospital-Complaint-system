@@ -79,7 +79,7 @@ class _HomePatientState extends State<HomePatient> {
                         width: 160,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.grey[100],
+                          color: Color(0xffF8F9FA),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -121,7 +121,7 @@ class _HomePatientState extends State<HomePatient> {
                         width: 150,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.grey[100],
+                          color: Color(0xffF8F9FA),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -170,7 +170,7 @@ class _HomePatientState extends State<HomePatient> {
                         width: 160,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.grey[100],
+                          color: Color(0xffF8F9FA),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -211,7 +211,7 @@ class _HomePatientState extends State<HomePatient> {
                         width: 150,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.grey[100],
+                          color: Color(0xffF8F9FA),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -315,7 +315,7 @@ class _HomePatientState extends State<HomePatient> {
           width: 70,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Color(0xff4f5efa),
+            color: Color(0xff0D6EFD),
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,

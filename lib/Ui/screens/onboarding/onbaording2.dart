@@ -1,6 +1,6 @@
-import 'package:depi_hospital_complaint_system/Ui/screens/login/login_admin.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/login/login_patient.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/login/login_staff.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/login_admin.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/login_patient.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/login_staff.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 

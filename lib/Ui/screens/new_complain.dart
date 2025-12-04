@@ -12,6 +12,7 @@ class NewComplainScreen extends StatefulWidget {
 
 class _NewComplainScreenState extends State<NewComplainScreen> {
   String? selectedRole;
+  String? selectedHospital;
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController idController = TextEditingController();
   final TextEditingController hospitalNameController = TextEditingController();
@@ -90,10 +91,43 @@ class _NewComplainScreenState extends State<NewComplainScreen> {
             ),
             const SizedBox(height: 29),
             // Hospital Name
-            CustomTextField(
-              controller: hospitalNameController,
-              labelText: 'Hospital Name',
-              hintText: 'enter Hospital name',
+            // CustomTextField(
+            //   controller: hospitalNameController,
+            //   labelText: 'Hospital Name',
+            //   hintText: 'enter Hospital name',
+            // ),
+            DropdownButtonFormField<String>(
+              dropdownColor: Colors.white,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: selectedHospital == null
+                    ? Colors.white
+                    : Color(0xffE8E9EB),
+                labelText: 'Hospital Name',
+                hintText: 'Choose Hospital',
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(width: 1, color: Color(0xff79747E)),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                isDense: true,
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 14,
+                ),
+              ),
+              initialValue: selectedHospital,
+              // we will get the value from the api and put it here
+              items: const [
+                DropdownMenuItem(
+                  value: 'Cairo Hospital',
+                  child: Text('Cairo Hospital'),
+                ),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  selectedHospital = value;
+                });
+              },
             ),
             const SizedBox(height: 29),
             // Department

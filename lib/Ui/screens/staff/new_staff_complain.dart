@@ -106,63 +106,63 @@ class _NewStaffComplainState extends State<NewStaffComplain> {
               ),
             ),
             SizedBox(height: 16),
-            // Complain category
-            DropdownButtonFormField<String>(
-              dropdownColor: Colors.white,
-              decoration: InputDecoration(
-                labelText: 'Compain category',
-                hintText: 'enter your Complain',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                isDense: true,
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 14,
-                ),
-              ),
-              value: selectedCategory,
-              items: [
-                if (selectedSubmission == 'Complaint') ...[
-                  DropdownMenuItem(
-                    value: 'Administrative',
-                    child: Text('Administrative'),
-                  ),
+            // Complain category removed ;-;
+            // DropdownButtonFormField<String>(
+            //   dropdownColor: Colors.white,
+            //   decoration: InputDecoration(
+            //     labelText: 'Compain category',
+            //     hintText: 'enter your Complain',
+            //     border: OutlineInputBorder(
+            //       borderRadius: BorderRadius.circular(6),
+            //     ),
+            //     isDense: true,
+            //     contentPadding: const EdgeInsets.symmetric(
+            //       horizontal: 12,
+            //       vertical: 14,
+            //     ),
+            //   ),
+            //   value: selectedCategory,
+            //   items: [
+            //     if (selectedSubmission == 'Complaint') ...[
+            //       DropdownMenuItem(
+            //         value: 'Administrative',
+            //         child: Text('Administrative'),
+            //       ),
 
-                  DropdownMenuItem(value: 'Service', child: Text('Service')),
-                  DropdownMenuItem(value: 'Staff', child: Text('Staff')),
-                  DropdownMenuItem(value: 'other', child: Text('other')),
-                ] else if (selectedSubmission == 'Request') ...[
-                  DropdownMenuItem(
-                    value: 'Maintenance',
-                    child: Text('Maintenance'),
-                  ),
-                  DropdownMenuItem(value: 'Supplies', child: Text('Supplies')),
-                  DropdownMenuItem(
-                    value: 'IT Support',
-                    child: Text('IT Support'),
-                  ),
-                  DropdownMenuItem(value: 'other', child: Text('other')),
-                ] else if (selectedSubmission == "Suggestion") ...[
-                  DropdownMenuItem(
-                    value: 'Work flow ',
-                    child: Text('Work flow '),
-                  ),
+            //       DropdownMenuItem(value: 'Service', child: Text('Service')),
+            //       DropdownMenuItem(value: 'Staff', child: Text('Staff')),
+            //       DropdownMenuItem(value: 'other', child: Text('other')),
+            //     ] else if (selectedSubmission == 'Request') ...[
+            //       DropdownMenuItem(
+            //         value: 'Maintenance',
+            //         child: Text('Maintenance'),
+            //       ),
+            //       DropdownMenuItem(value: 'Supplies', child: Text('Supplies')),
+            //       DropdownMenuItem(
+            //         value: 'IT Support',
+            //         child: Text('IT Support'),
+            //       ),
+            //       DropdownMenuItem(value: 'other', child: Text('other')),
+            //     ] else if (selectedSubmission == "Suggestion") ...[
+            //       DropdownMenuItem(
+            //         value: 'Work flow ',
+            //         child: Text('Work flow '),
+            //       ),
 
-                  DropdownMenuItem(
-                    value: ' Efficiency',
-                    child: Text(' Efficiency'),
-                  ),
-                  DropdownMenuItem(value: 'Safety', child: Text('Safety')),
-                  DropdownMenuItem(value: 'other', child: Text('other')),
-                ],
-              ],
-              onChanged: (value) {
-                setState(() {
-                  selectedCategory = value;
-                });
-              },
-            ),
+            //       DropdownMenuItem(
+            //         value: ' Efficiency',
+            //         child: Text(' Efficiency'),
+            //       ),
+            //       DropdownMenuItem(value: 'Safety', child: Text('Safety')),
+            //       DropdownMenuItem(value: 'other', child: Text('other')),
+            //     ],
+            //   ],
+            //   onChanged: (value) {
+            //     setState(() {
+            //       selectedCategory = value;
+            //     });
+            //   },
+            // ),
             const SizedBox(height: 37),
             // Submit Button
             Align(

@@ -1,4 +1,5 @@
 import 'package:depi_hospital_complaint_system/Ui/screens/home_patient.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/signup_patient.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 
@@ -12,7 +13,7 @@ class LoginPatient extends StatefulWidget {
 }
 
 class _LoginPatientState extends State<LoginPatient> {
-  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController nationalIDcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
   bool isOn = true;
   @override
@@ -47,9 +48,9 @@ class _LoginPatientState extends State<LoginPatient> {
               ),
               SizedBox(height: 0),
               CustomTextField(
-                controller: emailcontroller,
-                hintText: "enter your email",
-                labelText: "Work Email",
+                controller: nationalIDcontroller,
+                hintText: "enter your national id",
+                labelText: "National id",
               ),
               CustomTextField(
                 controller: passwordcontroller,
@@ -122,6 +123,40 @@ class _LoginPatientState extends State<LoginPatient> {
                     color: Color(0XFF0D6EFD),
                   ),
                 ),
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account? ",
+                    style: TextStyle(
+                      fontFamily: "Poppins",
+
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignUpPatient(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        decorationColor: Colors.grey,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0XFF0D6EFD),
+                        fontSize: width * 0.045,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

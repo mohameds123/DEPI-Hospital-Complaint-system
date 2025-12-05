@@ -2,22 +2,21 @@ import 'package:depi_hospital_complaint_system/Data/sign_up_model.dart';
 import 'package:depi_hospital_complaint_system/Logic/signup/cubit.dart';
 import 'package:depi_hospital_complaint_system/Logic/signup/state.dart';
 import 'package:depi_hospital_complaint_system/Ui/screens/home.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/login_patient.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignUpPatient extends StatefulWidget {
-  const SignUpPatient({super.key});
+class SignUpStaff extends StatefulWidget {
+  const SignUpStaff({super.key});
 
   @override
-  State<SignUpPatient> createState() => _SignUpPatientState();
+  State<SignUpStaff> createState() => _SignUpStaffState();
 }
 
-class _SignUpPatientState extends State<SignUpPatient> {
-  TextEditingController nationalIDController = TextEditingController();
+class _SignUpStaffState extends State<SignUpStaff> {
+  TextEditingController workEmailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController roleController = TextEditingController();
 
@@ -77,9 +76,9 @@ class _SignUpPatientState extends State<SignUpPatient> {
                     SizedBox(height: 0),
 
                     CustomTextField(
-                      controller: nationalIDController,
-                      hintText: "enter your national id",
-                      labelText: "National id",
+                      controller: workEmailController,
+                      hintText: "enter your work email",
+                      labelText: "Work Email",
                     ),
                     CustomTextField(
                       controller: passwordController,
@@ -101,7 +100,7 @@ class _SignUpPatientState extends State<SignUpPatient> {
                         onTap: () {
                           context.read<SignUpCubit>().signUp(
                             signUpModel: SignUpModel(
-                              email: nationalIDController.text,
+                              email: workEmailController.text,
                               password: passwordController.text,
                               role: roleController.text,
                             ),

@@ -1,7 +1,7 @@
 import 'package:depi_hospital_complaint_system/Data/login_model.dart';
 import 'package:depi_hospital_complaint_system/Logic/Login/cubit.dart';
 import 'package:depi_hospital_complaint_system/Logic/Login/state.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/home_patient.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/home.dart';
 import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/signup_patient.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
@@ -37,7 +37,7 @@ class _LoginPatientState extends State<LoginPatient> {
             );
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => HomePatient()),
+              MaterialPageRoute(builder: (context) => Home()),
               (route) => false,
             );
           } else if (state is LoginErrorState) {

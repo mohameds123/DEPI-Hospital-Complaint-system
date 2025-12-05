@@ -1,7 +1,9 @@
 import 'package:depi_hospital_complaint_system/Data/login_model.dart';
 import 'package:depi_hospital_complaint_system/Logic/Login/cubit.dart';
 import 'package:depi_hospital_complaint_system/Logic/Login/state.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/home_patient.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/home.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/signup_patient.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/signup_staff.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 
@@ -36,7 +38,7 @@ class _LoginStaffState extends State<LoginStaff> {
             );
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => HomePatient()),
+              MaterialPageRoute(builder: (context) => Home()),
               (route) => false,
             );
           } else if (state is LoginErrorState) {
@@ -147,6 +149,39 @@ class _LoginStaffState extends State<LoginStaff> {
                         loadingState: state is LoginLoadingState,
                       ),
                     ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don't have an account? ",
+                        style: TextStyle(
+                          fontFamily: "Poppins",
+
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignUpStaff(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            decorationColor: Colors.grey,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0XFF0D6EFD),
+                            fontSize: width * 0.045,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

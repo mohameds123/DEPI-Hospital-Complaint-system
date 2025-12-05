@@ -25,57 +25,6 @@ class _LoginStaffState extends State<LoginStaff> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-<<<<<<< HEAD
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: EdgeInsets.only(
-          top: height * 0.1,
-          right: width * 0.05,
-          left: width * 0.05,
-        ),
-        child: Column(
-          spacing: height * 0.03,
-          children: [
-            Image.asset(
-              "assets/image/Your voice builds better care (2) 1.png",
-              height: height * 0.205,
-            ),
-            Text(
-              "Staff Access Portal",
-              style: TextStyle(fontFamily: "Poppins", fontSize: width * 0.06),
-            ),
-            SizedBox(height: 0),
-            CustomTextField(
-              validator: (value) {},
-              controller: emailcontroller,
-              hintText: "enter your email",
-              labelText: "Work Email",
-            ),
-            CustomTextField(
-              validator: (value) {},
-              controller: passwordcontroller,
-              hintText: "enter your password",
-              labelText: "Password",
-              obscureText: true,
-              passwordTextIcon: true,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 32,
-                  width: 32,
-                  child: Checkbox(
-                    activeColor: Color(0XFF0D6EFD),
-                    side: BorderSide(color: Colors.black, width: width * 0.006),
-                    value: isChecked,
-                    onChanged: (value) {
-                      setState(() {
-                        isChecked = value!;
-                      });
-                    },
-=======
     return BlocProvider(
       create: (context) => LoginCubit(),
       child: BlocConsumer<LoginCubit, LoginStates>(
@@ -113,7 +62,6 @@ class _LoginStaffState extends State<LoginStaff> {
                   Image.asset(
                     "assets/image/Your voice builds better care (2) 1.png",
                     height: height * 0.205,
->>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
                   ),
                   Text(
                     "Staff Access Portal",
@@ -124,11 +72,23 @@ class _LoginStaffState extends State<LoginStaff> {
                   ),
                   SizedBox(height: 0),
                   CustomTextField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your email';
+                      }
+                      return null;
+                    },
                     controller: emailcontroller,
                     hintText: "enter your email",
                     labelText: "Work Email",
                   ),
                   CustomTextField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your password';
+                      }
+                      return null;
+                    },
                     controller: passwordcontroller,
                     hintText: "enter your password",
                     labelText: "Password",

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-import 'package:depi_hospital_complaint_system/Ui/screens/home.dart';
->>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
@@ -44,13 +40,23 @@ class _LoginAdminState extends State<LoginAdmin> {
             ),
             SizedBox(height: 0),
             CustomTextField(
-              validator: (value) {},
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your email';
+                }
+                return null;
+              },
               controller: emailcontroller,
               hintText: "enter your email",
               labelText: "Work Email",
             ),
             CustomTextField(
-              validator: (value) {},
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your password';
+                }
+                return null;
+              },
               controller: passwordcontroller,
               hintText: "enter your password",
               labelText: "Password",
@@ -58,7 +64,12 @@ class _LoginAdminState extends State<LoginAdmin> {
               passwordTextIcon: true,
             ),
             CustomTextField(
-              validator: (value) {},
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your code';
+                }
+                return null;
+              },
               controller: codecontroller,
               hintText: "enter your code",
               labelText: "Code",
@@ -109,17 +120,7 @@ class _LoginAdminState extends State<LoginAdmin> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * 0.15),
               child: InkWell(
-<<<<<<< HEAD
                 onTap: () {},
-=======
-                onTap: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => Home()),
-                    (route) => false,
-                  );
-                },
->>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
                 child: ButtonWidget(
                   height: height,
                   width: width,

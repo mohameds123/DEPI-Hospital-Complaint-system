@@ -5,12 +5,14 @@ class ButtonWidget extends StatelessWidget {
   double width;
   String text;
   Color color;
+  bool loadingState;
   ButtonWidget({
     super.key,
     required this.height,
     required this.width,
     required this.text,
     required this.color,
+    this.loadingState = false,
   });
 
   @override
@@ -23,15 +25,17 @@ class ButtonWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            fontFamily: "Poppins",
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-          ),
-        ),
+        child: (loadingState)
+            ? Center(child: CircularProgressIndicator())
+            : Text(
+                text,
+                style: TextStyle(
+                  fontFamily: "Poppins",
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                ),
+              ),
       ),
     );
   }

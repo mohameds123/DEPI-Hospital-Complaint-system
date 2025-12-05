@@ -1,4 +1,4 @@
-import 'package:depi_hospital_complaint_system/Ui/screens/home_patient.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/home.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
@@ -104,9 +104,10 @@ class _LoginAdminState extends State<LoginAdmin> {
               padding: EdgeInsets.symmetric(horizontal: width * 0.15),
               child: InkWell(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePatient()),
+                    MaterialPageRoute(builder: (context) => Home()),
+                    (route) => false,
                   );
                 },
                 child: ButtonWidget(

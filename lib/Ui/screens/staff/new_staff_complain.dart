@@ -6,7 +6,7 @@ import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart
 import 'package:flutter/material.dart';
 
 class NewStaffComplain extends StatefulWidget {
-  NewStaffComplain({super.key});
+  const NewStaffComplain({super.key});
 
   @override
   State<NewStaffComplain> createState() => _NewStaffComplainState();

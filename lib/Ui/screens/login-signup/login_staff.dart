@@ -28,12 +28,16 @@ class _LoginStaffState extends State<LoginStaff> {
       child: BlocConsumer<LoginCubit, LoginStates>(
         listener: (context, state) {
           if (state is LoginSucessState) {
-            ScaffoldMessenger.of(
-              context,
-            ).showSnackBar(SnackBar(content: Text("Success Login")));
-            Navigator.push(
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("Success Login"),
+                backgroundColor: Color(0XFF0D6EFD),
+              ),
+            );
+            Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => HomePatient()),
+              (route) => false,
             );
           } else if (state is LoginErrorState) {
             ScaffoldMessenger.of(

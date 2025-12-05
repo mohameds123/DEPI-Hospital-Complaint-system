@@ -104,9 +104,10 @@ class _LoginAdminState extends State<LoginAdmin> {
               padding: EdgeInsets.symmetric(horizontal: width * 0.15),
               child: InkWell(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(builder: (context) => HomePatient()),
+                    (route) => false,
                   );
                 },
                 child: ButtonWidget(

@@ -62,7 +62,7 @@ class _NewComplainScreenState extends State<NewComplainScreen> {
                   vertical: 14,
                 ),
               ),
-              initialValue: selectedRole,
+              //initialValue: selectedRole,
               items: const [
                 DropdownMenuItem(value: 'Patient', child: Text('Patient')),
                 DropdownMenuItem(value: 'Staff', child: Text('Staff')),
@@ -115,7 +115,7 @@ class _NewComplainScreenState extends State<NewComplainScreen> {
                   vertical: 14,
                 ),
               ),
-              initialValue: selectedHospital,
+              // initialValue: selectedHospital,
               // we will get the value from the api and put it here
               items: const [
                 DropdownMenuItem(

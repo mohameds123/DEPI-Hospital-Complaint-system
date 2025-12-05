@@ -2,22 +2,21 @@ import 'package:depi_hospital_complaint_system/Data/sign_up_model.dart';
 import 'package:depi_hospital_complaint_system/Logic/signup/cubit.dart';
 import 'package:depi_hospital_complaint_system/Logic/signup/state.dart';
 import 'package:depi_hospital_complaint_system/Ui/screens/home.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/login_patient.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignUpPatient extends StatefulWidget {
-  const SignUpPatient({super.key});
+class SignUpStaff extends StatefulWidget {
+  const SignUpStaff({super.key});
 
   @override
-  State<SignUpPatient> createState() => _SignUpPatientState();
+  State<SignUpStaff> createState() => _SignUpStaffState();
 }
 
-class _SignUpPatientState extends State<SignUpPatient> {
-  TextEditingController nationalIDController = TextEditingController();
+class _SignUpStaffState extends State<SignUpStaff> {
+  TextEditingController workEmailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController roleController = TextEditingController();
 
@@ -57,53 +56,6 @@ class _SignUpPatientState extends State<SignUpPatient> {
                 right: width * 0.05,
                 left: width * 0.05,
               ),
-<<<<<<< HEAD
-              SizedBox(height: 0),
-
-              CustomTextField(
-                validator: (value) {},
-                controller: nationalIDcontroller,
-                hintText: "enter your national id",
-                labelText: "National id",
-              ),
-              CustomTextField(
-                validator: (value) {},
-                controller: passwordcontroller,
-                hintText: "enter your password",
-                labelText: "Password",
-                obscureText: true,
-                passwordTextIcon: true,
-              ),
-
-              SizedBox(height: height * 0.01),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.15),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePatient()),
-                    );
-                  },
-                  child: ButtonWidget(
-                    height: height,
-                    width: width,
-                    text: "Sign Up",
-                    color: Color(0XFF0D6EFD),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Back to ",
-                    style: TextStyle(
-                      fontFamily: "Poppins",
-
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
-=======
               child: SingleChildScrollView(
                 child: Column(
                   spacing: height * 0.03,
@@ -111,7 +63,6 @@ class _SignUpPatientState extends State<SignUpPatient> {
                     Image.asset(
                       "assets/image/Your voice builds better care (2) 1.png",
                       height: height * 0.205,
->>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
                     ),
                     Text(
                       textAlign: TextAlign.center,
@@ -125,11 +76,13 @@ class _SignUpPatientState extends State<SignUpPatient> {
                     SizedBox(height: 0),
 
                     CustomTextField(
-                      controller: nationalIDController,
-                      hintText: "enter your national id",
-                      labelText: "National id",
+                      validator: (value) {},
+                      controller: workEmailController,
+                      hintText: "enter your work email",
+                      labelText: "Work Email",
                     ),
                     CustomTextField(
+                      validator: (value) {},
                       controller: passwordController,
                       hintText: "enter your password",
                       labelText: "Password",
@@ -137,6 +90,7 @@ class _SignUpPatientState extends State<SignUpPatient> {
                       passwordTextIcon: true,
                     ),
                     CustomTextField(
+                      validator: (value) {},
                       controller: roleController,
                       hintText: "enter your role",
                       labelText: "Role",
@@ -149,7 +103,7 @@ class _SignUpPatientState extends State<SignUpPatient> {
                         onTap: () {
                           context.read<SignUpCubit>().signUp(
                             signUpModel: SignUpModel(
-                              email: nationalIDController.text,
+                              email: workEmailController.text,
                               password: passwordController.text,
                               role: roleController.text,
                             ),

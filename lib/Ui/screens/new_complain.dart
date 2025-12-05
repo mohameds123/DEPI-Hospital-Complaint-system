@@ -44,6 +44,26 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                   'assets/image/Your voice builds better care (2) 1.png',
                   height: 190, // your logo here
                 ),
+<<<<<<< HEAD
+=======
+                isDense: true,
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 14,
+                ),
+              ),
+              //initialValue: selectedRole,
+              items: const [
+                DropdownMenuItem(value: 'Patient', child: Text('Patient')),
+                DropdownMenuItem(value: 'Staff', child: Text('Staff')),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  selectedRole = value;
+                });
+              },
+            ),
+>>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
 
                 const Text(
                   'New Complain',
@@ -100,6 +120,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                   labelText: 'Username',
                   hintText: 'enter your username',
                 ),
+<<<<<<< HEAD
 
                 const SizedBox(height: 29),
                 // ID
@@ -259,6 +280,15 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                       child: Icon(Icons.arrow_forward, color: Colors.white),
                     ),
                   ),
+=======
+              ),
+              //initialValue: selectedHospital,
+              // we will get the value from the api and put it here
+              items: const [
+                DropdownMenuItem(
+                  value: 'Cairo Hospital',
+                  child: Text('Cairo Hospital'),
+>>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
                 ),
               ],
             ),

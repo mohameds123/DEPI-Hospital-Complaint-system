@@ -1,5 +1,5 @@
-import 'package:depi_hospital_complaint_system/Ui/screens/home_patient.dart';
 import 'package:flutter/material.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/home.dart';
 
 class SubmitButton extends StatelessWidget {
   SubmitButton({super.key, required this.reporttype, this.onTap});
@@ -62,9 +62,7 @@ class SubmitButton extends StatelessWidget {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => HomePatient(),
-                            ),
+                            MaterialPageRoute(builder: (context) => Home()),
                           );
                         },
                         child: Container(

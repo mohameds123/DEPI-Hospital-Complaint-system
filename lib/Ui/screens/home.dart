@@ -3,14 +3,14 @@ import 'package:depi_hospital_complaint_system/Ui/screens/chatbot.dart';
 import 'package:depi_hospital_complaint_system/Ui/screens/new_complain.dart';
 import 'package:flutter/material.dart';
 
-class HomePatient extends StatefulWidget {
-  const HomePatient({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<HomePatient> createState() => _HomePatientState();
+  State<Home> createState() => _HomeState();
 }
 
-class _HomePatientState extends State<HomePatient> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

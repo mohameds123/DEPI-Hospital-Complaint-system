@@ -5,6 +5,7 @@ import 'package:depi_hospital_complaint_system/Ui/widgets/radio_button_widget.da
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 class NewStaffComplaint extends StatefulWidget {
   String username;
   String id;
@@ -17,6 +18,10 @@ class NewStaffComplaint extends StatefulWidget {
     required this.hospitalId,
     required this.department,
   });
+=======
+class NewStaffComplain extends StatefulWidget {
+  const NewStaffComplain({super.key});
+>>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
 
   @override
   State<NewStaffComplaint> createState() => _NewStaffComplaintState();

@@ -83,13 +83,6 @@ class Onbaording2 extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: height * 0.06),
-            Container(
-              width: width * 0.1,
-              height: height * 0.05,
-              decoration: BoxDecoration(color: Color(0XFF0D6EFD)),
-              child: Icon(Icons.arrow_forward, color: Colors.white),
-            ),
           ],
         ),
       ),

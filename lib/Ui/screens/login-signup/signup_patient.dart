@@ -49,11 +49,13 @@ class _SignUpPatientState extends State<SignUpPatient> {
               SizedBox(height: 0),
 
               CustomTextField(
+                validator: (value) {},
                 controller: nationalIDcontroller,
                 hintText: "enter your national id",
                 labelText: "National id",
               ),
               CustomTextField(
+                validator: (value) {},
                 controller: passwordcontroller,
                 hintText: "enter your password",
                 labelText: "Password",

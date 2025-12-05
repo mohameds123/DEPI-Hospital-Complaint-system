@@ -80,6 +80,7 @@ class _StaffRequestSubmitState extends State<StaffRequestSubmit> {
 
             // Request Title
             CustomTextField(
+              validator: (value) {},
               controller: requestTitleController,
               hintText: 'enter your request title',
               labelText: 'Request Title',
@@ -87,6 +88,7 @@ class _StaffRequestSubmitState extends State<StaffRequestSubmit> {
             SizedBox(height: 22),
             // Description
             CustomTextField(
+              validator: (value) {},
               controller: requestDescriptionController,
               hintText: 'enter your Description',
               labelText: 'Description',

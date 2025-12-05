@@ -40,11 +40,13 @@ class _LoginStaffState extends State<LoginStaff> {
             ),
             SizedBox(height: 0),
             CustomTextField(
+              validator: (value) {},
               controller: emailcontroller,
               hintText: "enter your email",
               labelText: "Work Email",
             ),
             CustomTextField(
+              validator: (value) {},
               controller: passwordcontroller,
               hintText: "enter your password",
               labelText: "Password",

@@ -1,37 +1,40 @@
 import 'package:depi_hospital_complaint_system/Data/complaint_model.dart';
 import 'package:depi_hospital_complaint_system/Logic/new_complaint/cubit.dart';
 import 'package:depi_hospital_complaint_system/Logic/new_complaint/state.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/home_patient.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/attachment_Box.dart';
-import 'package:depi_hospital_complaint_system/Ui/widgets/radio_button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/submit_button.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class NewPatientComplaint extends StatefulWidget {
+class StaffComplainAndSuggestionSubmit extends StatefulWidget {
   String username;
   String id;
   String hospitalId;
   String department;
+  String jobTitle;
+  String complainType;
 
-  NewPatientComplaint({
+  StaffComplainAndSuggestionSubmit({
     super.key,
+    required this.complainType,
     required this.username,
     required this.id,
     required this.hospitalId,
     required this.department,
+    required this.jobTitle,
   });
 
   @override
-  State<NewPatientComplaint> createState() => _NewPatientComplaintState();
+  State<StaffComplainAndSuggestionSubmit> createState() =>
+      _StaffComplainAndSuggestionSubmitState();
 }
 
-class _NewPatientComplaintState extends State<NewPatientComplaint> {
-  TextEditingController titleController = TextEditingController();
-  TextEditingController descriptionController = TextEditingController();
+class _StaffComplainAndSuggestionSubmitState
+    extends State<StaffComplainAndSuggestionSubmit> {
+  TextEditingController Titlecontroller = TextEditingController();
+  TextEditingController descriptioncontroller = TextEditingController();
 
-  String? selectedSubmission = 'Complaint';
   bool isAnonymous = false;
 
   @override
@@ -54,88 +57,38 @@ class _NewPatientComplaintState extends State<NewPatientComplaint> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 65),
-                  // type of submission
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Type of Submission',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                  SizedBox(height: 100),
+                  // Logo
+                  Image.asset(
+                    'assets/image/Your voice builds better care (2) 1.png',
+                    height: 190, // your logo here
                   ),
-
-                  SizedBox(height: 8),
-                  // complaint
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedSubmission = 'Complaint';
-                      });
-                    },
-                    child: CustomRadioButton(
-                      selectedValue: selectedSubmission,
-                      value: 'Complaint',
-                    ),
+                  Text(
+                    'New ${widget.complainType}',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(height: 16),
-                  // request
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedSubmission = 'Request';
-                      });
-                    },
-                    child: CustomRadioButton(
-                      selectedValue: selectedSubmission,
-                      value: 'Request',
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  // suggestion
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedSubmission = 'Suggestion';
-                      });
-                    },
-                    child: CustomRadioButton(
-                      selectedValue: selectedSubmission,
-                      value: 'Suggestion',
-                    ),
-                  ),
-                  SizedBox(height: 22),
-
-                  //  Title
+                  SizedBox(height: 30),
+                  // Complain Title
                   CustomTextField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter $selectedSubmission title';
-                      }
-                      return null;
-                    },
-                    controller: titleController,
-                    hintText: 'enter your $selectedSubmission title',
-                    labelText: '$selectedSubmission Title',
+                    validator: (value) {},
+                    controller: Titlecontroller,
+                    hintText: 'enter your ${widget.complainType} title',
+                    labelText: '${widget.complainType} Title',
                   ),
-                  SizedBox(height: 22),
+                  SizedBox(height: 16),
                   // Description
                   CustomTextField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter Description';
-                      }
-                      return null;
-                    },
-                    controller: descriptionController,
+                    validator: (value) {},
+                    controller: descriptioncontroller,
                     hintText: 'enter your Description',
                     labelText: 'Description',
                   ),
-                  SizedBox(height: 22),
+                  SizedBox(height: 21),
+
+                  // Upload box
                   AttachmentBox(),
-                  SizedBox(height: 22),
+
+                  SizedBox(height: 10),
                   // Continue as Anonymous
                   Row(
                     children: [
@@ -169,23 +122,21 @@ class _NewPatientComplaintState extends State<NewPatientComplaint> {
 
                   const SizedBox(height: 37),
 
-                  // Submit Request
                   SubmitButton(
                     onTap: () {
                       context.read<NewComplaintCubit>().newComplaint(
                         complaint: ComplaintModel(
-                          jobTitle: 'Patient',
                           hospitalId: int.parse(widget.hospitalId),
-                          category: selectedSubmission!,
+                          title: Titlecontroller.text,
+                          category: widget.complainType,
                           department: widget.department,
-                          description: descriptionController.text,
-                          title: titleController.text,
+                          description: descriptioncontroller.text,
+                          jobTitle: widget.jobTitle,
                           attachmentUrl: '',
                         ),
                       );
                     },
-
-                    reporttype: '$selectedSubmission',
+                    reporttype: widget.complainType,
                   ),
                 ],
               ),

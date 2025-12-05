@@ -1,4 +1,3 @@
-import 'package:depi_hospital_complaint_system/Ui/screens/home_patient.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
@@ -41,11 +40,13 @@ class _LoginAdminState extends State<LoginAdmin> {
             ),
             SizedBox(height: 0),
             CustomTextField(
+              validator: (value) {},
               controller: emailcontroller,
               hintText: "enter your email",
               labelText: "Work Email",
             ),
             CustomTextField(
+              validator: (value) {},
               controller: passwordcontroller,
               hintText: "enter your password",
               labelText: "Password",
@@ -53,6 +54,7 @@ class _LoginAdminState extends State<LoginAdmin> {
               passwordTextIcon: true,
             ),
             CustomTextField(
+              validator: (value) {},
               controller: codecontroller,
               hintText: "enter your code",
               labelText: "Code",
@@ -103,12 +105,7 @@ class _LoginAdminState extends State<LoginAdmin> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * 0.15),
               child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePatient()),
-                  );
-                },
+                onTap: () {},
                 child: ButtonWidget(
                   height: height,
                   width: width,

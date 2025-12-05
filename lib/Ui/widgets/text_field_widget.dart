@@ -8,15 +8,18 @@ class CustomTextField extends StatelessWidget {
     required this.labelText,
     this.obscureText = false,
     this.passwordTextIcon = false,
+    required this.validator,
   });
   bool obscureText;
   TextEditingController controller;
   String hintText;
   String labelText;
   bool passwordTextIcon;
+  FormFieldValidator validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(

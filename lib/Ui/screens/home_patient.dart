@@ -307,7 +307,7 @@ class _HomePatientState extends State<HomePatient> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => NewComplainScreen()),
+            MaterialPageRoute(builder: (context) => NewComplaintScreen()),
           );
         },
         child: Container(

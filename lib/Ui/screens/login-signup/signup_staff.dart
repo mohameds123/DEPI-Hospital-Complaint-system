@@ -76,11 +76,13 @@ class _SignUpStaffState extends State<SignUpStaff> {
                     SizedBox(height: 0),
 
                     CustomTextField(
+                      validator: (value) {},
                       controller: workEmailController,
                       hintText: "enter your work email",
                       labelText: "Work Email",
                     ),
                     CustomTextField(
+                      validator: (value) {},
                       controller: passwordController,
                       hintText: "enter your password",
                       labelText: "Password",
@@ -88,6 +90,7 @@ class _SignUpStaffState extends State<SignUpStaff> {
                       passwordTextIcon: true,
                     ),
                     CustomTextField(
+                      validator: (value) {},
                       controller: roleController,
                       hintText: "enter your role",
                       labelText: "Role",

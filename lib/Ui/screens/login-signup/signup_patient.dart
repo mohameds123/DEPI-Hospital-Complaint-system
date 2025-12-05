@@ -2,7 +2,6 @@ import 'package:depi_hospital_complaint_system/Data/sign_up_model.dart';
 import 'package:depi_hospital_complaint_system/Logic/signup/cubit.dart';
 import 'package:depi_hospital_complaint_system/Logic/signup/state.dart';
 import 'package:depi_hospital_complaint_system/Ui/screens/home.dart';
-import 'package:depi_hospital_complaint_system/Ui/screens/login-signup/login_patient.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/button_widget.dart';
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 
@@ -77,11 +76,23 @@ class _SignUpPatientState extends State<SignUpPatient> {
                     SizedBox(height: 0),
 
                     CustomTextField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your national id';
+                        }
+                        return null;
+                      },
                       controller: nationalIDController,
                       hintText: "enter your national id",
                       labelText: "National id",
                     ),
                     CustomTextField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        return null;
+                      },
                       controller: passwordController,
                       hintText: "enter your password",
                       labelText: "Password",
@@ -89,6 +100,12 @@ class _SignUpPatientState extends State<SignUpPatient> {
                       passwordTextIcon: true,
                     ),
                     CustomTextField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your role';
+                        }
+                        return null;
+                      },
                       controller: roleController,
                       hintText: "enter your role",
                       labelText: "Role",

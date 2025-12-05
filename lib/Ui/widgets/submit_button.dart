@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:depi_hospital_complaint_system/Ui/screens/home.dart';
 
 class SubmitButton extends StatelessWidget {
-  SubmitButton({super.key, required this.reporttype});
+  SubmitButton({super.key, required this.reporttype, this.onTap});
 
   String reporttype;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,9 @@ class SubmitButton extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: GestureDetector(
         onTap: () {
+          if (onTap != null) onTap!();
           showDialog(
+            barrierDismissible: false,
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
@@ -55,7 +59,12 @@ class SubmitButton extends StatelessWidget {
 
                       SizedBox(height: 42),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Home()),
+                          );
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           height: 48,

@@ -72,11 +72,23 @@ class _LoginStaffState extends State<LoginStaff> {
                   ),
                   SizedBox(height: 0),
                   CustomTextField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your email';
+                      }
+                      return null;
+                    },
                     controller: emailcontroller,
                     hintText: "enter your email",
                     labelText: "Work Email",
                   ),
                   CustomTextField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your password';
+                      }
+                      return null;
+                    },
                     controller: passwordcontroller,
                     hintText: "enter your password",
                     labelText: "Password",

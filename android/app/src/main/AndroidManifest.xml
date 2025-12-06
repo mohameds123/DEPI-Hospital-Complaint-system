@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="depi_hospital_complaint_system"
+        android:label="DEPI_HCS"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

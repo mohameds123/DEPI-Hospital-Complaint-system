@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NewComplaintScreen extends StatefulWidget {
-  const NewComplaintScreen({super.key});
+  String? role;
+  String? iD;
+  NewComplaintScreen({super.key, required this.role, required this.iD});
 
   @override
   State<NewComplaintScreen> createState() => _NewComplaintScreenState();
@@ -23,6 +25,13 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
   final TextEditingController departmentController = TextEditingController();
 
   final formkey = GlobalKey<FormState>();
+
+  @override
+  initState() {
+    idController.text = widget.iD!;
+    selectedRole = widget.role;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,26 +53,6 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                   'assets/image/Your voice builds better care (2) 1.png',
                   height: 190, // your logo here
                 ),
-<<<<<<< HEAD
-=======
-                isDense: true,
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 14,
-                ),
-              ),
-              //initialValue: selectedRole,
-              items: const [
-                DropdownMenuItem(value: 'Patient', child: Text('Patient')),
-                DropdownMenuItem(value: 'Staff', child: Text('Staff')),
-              ],
-              onChanged: (value) {
-                setState(() {
-                  selectedRole = value;
-                });
-              },
-            ),
->>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
 
                 const Text(
                   'New Complain',
@@ -97,14 +86,22 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                   ),
                   initialValue: selectedRole,
                   items: const [
-                    DropdownMenuItem(value: 'Patient', child: Text('Patient')),
-                    DropdownMenuItem(value: 'Staff', child: Text('Staff')),
+                    DropdownMenuItem(
+                      value: 'patient',
+                      child: Text(
+                        'Patient',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                    DropdownMenuItem(
+                      value: 'staff',
+                      child: Text(
+                        'Staff',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
                   ],
-                  onChanged: (value) {
-                    setState(() {
-                      selectedRole = value;
-                    });
-                  },
+                  onChanged: null,
                 ),
 
                 const SizedBox(height: 29),
@@ -120,7 +117,6 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                   labelText: 'Username',
                   hintText: 'enter your username',
                 ),
-<<<<<<< HEAD
 
                 const SizedBox(height: 29),
                 // ID
@@ -131,6 +127,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                     }
                     return null;
                   },
+                  readonly: true,
                   controller: idController,
                   labelText: 'National ID',
                   hintText: 'enter your National ID',
@@ -245,7 +242,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
-                      if (selectedRole == 'Staff' &&
+                      if (selectedRole == 'staff' &&
                           formkey.currentState!.validate()) {
                         Navigator.push(
                           context,
@@ -258,7 +255,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                             ),
                           ),
                         );
-                      } else if (selectedRole == 'Patient' &&
+                      } else if (selectedRole == 'patient' &&
                           formkey.currentState!.validate()) {
                         Navigator.push(
                           context,
@@ -280,15 +277,6 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                       child: Icon(Icons.arrow_forward, color: Colors.white),
                     ),
                   ),
-=======
-              ),
-              //initialValue: selectedHospital,
-              // we will get the value from the api and put it here
-              items: const [
-                DropdownMenuItem(
-                  value: 'Cairo Hospital',
-                  child: Text('Cairo Hospital'),
->>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
                 ),
               ],
             ),

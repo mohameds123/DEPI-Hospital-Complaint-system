@@ -9,7 +9,9 @@ class CustomTextField extends StatelessWidget {
     this.obscureText = false,
     this.passwordTextIcon = false,
     required this.validator,
+    this.readonly = false,
   });
+  bool readonly;
   bool obscureText;
   TextEditingController controller;
   String hintText;
@@ -19,6 +21,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: readonly,
       validator: validator,
       controller: controller,
       obscureText: obscureText,

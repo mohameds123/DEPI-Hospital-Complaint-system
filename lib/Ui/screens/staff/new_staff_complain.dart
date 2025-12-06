@@ -5,7 +5,6 @@ import 'package:depi_hospital_complaint_system/Ui/widgets/radio_button_widget.da
 import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
 
-<<<<<<< HEAD
 class NewStaffComplaint extends StatefulWidget {
   String username;
   String id;
@@ -18,10 +17,6 @@ class NewStaffComplaint extends StatefulWidget {
     required this.hospitalId,
     required this.department,
   });
-=======
-class NewStaffComplain extends StatefulWidget {
-  const NewStaffComplain({super.key});
->>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
 
   @override
   State<NewStaffComplaint> createState() => _NewStaffComplaintState();
@@ -216,7 +211,14 @@ class _NewStaffComplaintState extends State<NewStaffComplaint> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => StaffRequestSubmit(),
+                          builder: (context) => StaffRequestSubmit(
+                            jobTitle: jobtitleController.text,
+                            id: widget.id,
+                            department: widget.department,
+                            hospitalId: widget.hospitalId,
+                            username: widget.username,
+                            complainType: 'Request',
+                          ),
                         ),
                       );
                     } else if (selectedSubmission == 'Suggestion' &&

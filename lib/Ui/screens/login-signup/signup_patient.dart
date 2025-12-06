@@ -99,17 +99,6 @@ class _SignUpPatientState extends State<SignUpPatient> {
                       obscureText: true,
                       passwordTextIcon: true,
                     ),
-                    CustomTextField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your role';
-                        }
-                        return null;
-                      },
-                      controller: roleController,
-                      hintText: "enter your role",
-                      labelText: "Role",
-                    ),
 
                     SizedBox(height: height * 0.01),
                     Padding(
@@ -120,7 +109,7 @@ class _SignUpPatientState extends State<SignUpPatient> {
                             signUpModel: SignUpModel(
                               email: nationalIDController.text,
                               password: passwordController.text,
-                              role: roleController.text,
+                              role: 'patient',
                             ),
                           );
                         },

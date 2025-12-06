@@ -76,24 +76,28 @@ class _SignUpStaffState extends State<SignUpStaff> {
                     SizedBox(height: 0),
 
                     CustomTextField(
-                      validator: (value) {},
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter your work email";
+                        }
+                        return null;
+                      },
                       controller: workEmailController,
                       hintText: "enter your work email",
                       labelText: "Work Email",
                     ),
                     CustomTextField(
-                      validator: (value) {},
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter your password";
+                        }
+                        return null;
+                      },
                       controller: passwordController,
                       hintText: "enter your password",
                       labelText: "Password",
                       obscureText: true,
                       passwordTextIcon: true,
-                    ),
-                    CustomTextField(
-                      validator: (value) {},
-                      controller: roleController,
-                      hintText: "enter your role",
-                      labelText: "Role",
                     ),
 
                     SizedBox(height: height * 0.01),
@@ -105,7 +109,7 @@ class _SignUpStaffState extends State<SignUpStaff> {
                             signUpModel: SignUpModel(
                               email: workEmailController.text,
                               password: passwordController.text,
-                              role: roleController.text,
+                              role: 'staff',
                             ),
                           );
                         },

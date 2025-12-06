@@ -8,6 +8,7 @@ import 'package:depi_hospital_complaint_system/Ui/widgets/text_field_widget.dart
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPatient extends StatefulWidget {
   const LoginPatient({super.key});
@@ -55,34 +56,6 @@ class _LoginPatientState extends State<LoginPatient> {
                 right: width * 0.05,
                 left: width * 0.05,
               ),
-<<<<<<< HEAD
-              SizedBox(height: 0),
-              CustomTextField(
-                validator: (value) {},
-                controller: nationalIDcontroller,
-                hintText: "enter your national id",
-                labelText: "National id",
-              ),
-              CustomTextField(
-                validator: (value) {},
-                controller: passwordcontroller,
-                hintText: "enter your password",
-                labelText: "Password",
-                obscureText: true,
-                passwordTextIcon: true,
-              ),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Continue as Anonymous",
-                    style: TextStyle(
-                      fontFamily: "Poppins",
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
-=======
               child: SingleChildScrollView(
                 child: Column(
                   spacing: height * 0.03,
@@ -90,7 +63,6 @@ class _LoginPatientState extends State<LoginPatient> {
                     Image.asset(
                       "assets/image/Your voice builds better care (2) 1.png",
                       height: height * 0.205,
->>>>>>> 4a0b6261661cbafa1340f00bd5af7af7bb7f2ace
                     ),
                     Text(
                       textAlign: TextAlign.center,
@@ -104,11 +76,23 @@ class _LoginPatientState extends State<LoginPatient> {
                     ),
                     SizedBox(height: 0),
                     CustomTextField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your national id';
+                        }
+                        return null;
+                      },
                       controller: nationalIDcontroller,
                       hintText: "enter your national id",
                       labelText: "National id",
                     ),
                     CustomTextField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        return null;
+                      },
                       controller: passwordcontroller,
                       hintText: "enter your password",
                       labelText: "Password",
@@ -166,7 +150,13 @@ class _LoginPatientState extends State<LoginPatient> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: width * 0.15),
                       child: InkWell(
-                        onTap: () {
+                        onTap: () async {
+                          final prefs = await SharedPreferences.getInstance();
+                          await prefs.setString(
+                            'ID',
+                            nationalIDcontroller.text,
+                          );
+
                           context.read<LoginCubit>().login(
                             loginModel: LoginModel(
                               email: nationalIDcontroller.text,

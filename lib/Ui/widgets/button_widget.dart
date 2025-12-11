@@ -26,7 +26,7 @@ class ButtonWidget extends StatelessWidget {
       ),
       child: Center(
         child: (loadingState)
-            ? Center(child: CircularProgressIndicator())
+            ? Center(child: CircularProgressIndicator(color: Colors.white))
             : Text(
                 text,
                 style: TextStyle(

@@ -290,53 +290,73 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       SizedBox(height: 13),
-                      Container(
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[100],
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(state.reportsResponse.pending[0].category),
-                            SizedBox(height: 5),
-                            Text(state.reportsResponse.pending[0].title!),
-                            SizedBox(height: 7),
-                            Row(
-                              children: [
-                                Text(
-                                  DateFormat('dd MMMM yyyy').format(
-                                    state.reportsResponse.pending[0].createdAt,
-                                  ),
-                                ),
-                                SizedBox(width: 70),
-                                Text(
-                                  state.reportsResponse.pending[0].department,
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 25),
-                            Container(
-                              width: 90,
-                              height: 50,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                color: Color(0xffF39C12),
-                              ),
+
+                      state.reportsResponse.pending.isEmpty
+                          ? Center(
                               child: Text(
-                                state.reportsResponse.pending[0].status,
+                                "No recent issues",
                                 style: TextStyle(
-                                  color: Color(0xff212529),
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
+                            )
+                          : Container(
+                              padding: EdgeInsets.all(15),
+                              decoration: BoxDecoration(
+                                color: Colors.grey[100],
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    state.reportsResponse.pending[0].category ??
+                                        "",
+                                  ),
+                                  SizedBox(height: 5),
+                                  Text(state.reportsResponse.pending[0].title!),
+                                  SizedBox(height: 7),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        DateFormat('dd MMMM yyyy').format(
+                                          state
+                                              .reportsResponse
+                                              .pending[0]
+                                              .createdAt,
+                                        ),
+                                      ),
+                                      SizedBox(width: 70),
+                                      Text(
+                                        state
+                                            .reportsResponse
+                                            .pending[0]
+                                            .department,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 25),
+                                  Container(
+                                    width: 90,
+                                    height: 50,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: Color(0xffF39C12),
+                                    ),
+                                    child: Text(
+                                      state.reportsResponse.pending[0].status,
+                                      style: TextStyle(
+                                        color: Color(0xff212529),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ],
-                        ),
-                      ),
                     ],
                   ),
                 ),
